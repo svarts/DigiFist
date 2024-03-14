@@ -1,0 +1,19 @@
+# .gitignore
+
+# macOS system files
+.DS_Store
+
+# Node modules
+node_modules/
+
+# Log files
+npm-debug.log
+yarn-error.log
+
+# Environment files
+.env
+
+# Other unnecessary files
+*.log
+*.tmp
+*.temp
