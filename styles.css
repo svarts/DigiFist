@@ -94,14 +94,21 @@ h2 {
 
 .colors {
     display: flex;
-    margin-left: 36%;
+    margin-left: 38%;
 }
 
 .color {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     margin-right: 5px;
+    border: 1.5px solid transparent; 
+    transition: border-color 0.3s, transform 0.3s; 
+}
+
+.color.selected {
+    border-color: #323232; 
+    transform: scale(0.8); 
 }
 
 @media (max-width: 667px) {
