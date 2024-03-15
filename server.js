@@ -5,6 +5,7 @@ const path = require("path");
 const server = http.createServer((req, res) => {
   if (req.url.startsWith("/assets/")) {
     const assetPath = path.join(__dirname, req.url);
+
     fs.readFile(assetPath, (err, content) => {
       if (err) {
         res.writeHead(404);
@@ -13,15 +14,26 @@ const server = http.createServer((req, res) => {
       }
 
       const ext = path.extname(assetPath);
+
       let contentType = "text/plain";
-      if (ext === ".css") {
-        contentType = "text/css";
-      } else if (ext === ".js") {
-        contentType = "application/javascript";
-      } else if (ext === ".png") {
-        contentType = "image/png";
-      } else if (ext === ".jpg" || ext === ".jpeg") {
-        contentType = "image/jpeg";
+
+      switch (ext) {
+        case ".css":
+          contentType = "text/css";
+          break;
+        case ".js":
+          contentType = "application/javascript";
+          break;
+        case ".png":
+          contentType = "image/png";
+          break;
+        case ".jpg":
+        case ".jpeg":
+          contentType = "image/jpeg";
+          break;
+        case ".svg":
+          contentType = "image/svg+xml";
+          break;
       }
 
       res.writeHead(200, { "Content-Type": contentType });
@@ -41,6 +53,12 @@ const server = http.createServer((req, res) => {
     });
   } else if (req.url === "/script.js") {
     fs.readFile(path.join(__dirname, "script.js"), (err, content) => {
+      if (err) throw err;
+      res.writeHead(200, { "Content-Type": "text/javascript" });
+      res.end(content);
+    });
+  } else if (req.url === "/slider.js") {
+    fs.readFile(path.join(__dirname, "slider.js"), (err, content) => {
       if (err) throw err;
       res.writeHead(200, { "Content-Type": "text/javascript" });
       res.end(content);

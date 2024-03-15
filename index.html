@@ -6,10 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce Task</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>E-commerce Task</h1>
-    <button id="changeColor">Change color</button>
+    <div class="container">
+      <div class="bg-image"></div>
+      <div class="content">
+        <h1>
+          Everyday items, we have <br />
+          something to suit every <br />
+          occasion.
+        </h1>
+        <p>
+          At suspendisse augue lectus arcu, accumsan ut sit posuere <br />
+          vitae sit tincidunt semper eu proin leo gravida cursus.
+        </p>
+        <a href="#" class="shop-link">Shop All Everyday Items</a>
+
+        <div class="product-slider">
+          <div class="slider-wrapper">
+            <div class="product">
+              <img src="/assets/bg-1.svg" alt="product 1" />
+              <h2>365 Signature Hoodie</h2>
+              <div class="price-color-wrapper">
+                <p class="price">€33.95</p>
+                <div class="colors" id="colors-1"></div>
+              </div>
+            </div>
+            <div class="product">
+              <img src="/assets/bg-2.svg" alt="product 2" />
+              <h2>Organic Skinny High Waist Jeans</h2>
+              <div class="price-color-wrapper">
+                <p class="price">€33.95</p>
+                <div class="colors" id="colors-2"></div>
+              </div>
+            </div>
+            <div class="product">
+              <img src="/assets/bg-3.svg" alt="product 3" />
+              <h2>Organic Skinny High Waist Jeans</h2>
+              <div class="price-color-wrapper">
+                <p class="price">€33.95</p>
+                <div class="colors" id="colors-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right next"></i>
+      </div>
+    </div>
     <script src="script.js"></script>
+    <script src="slider.js"></script>
   </body>
 </html>

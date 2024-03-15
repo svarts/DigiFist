@@ -1,4 +1,25 @@
-document.getElementById("changeColor").addEventListener("click", function () {
-  document.body.style.backgroundColor =
-    "#" + Math.floor(Math.random() * 16777215).toString(16);
+document.addEventListener('DOMContentLoaded', function () {
+    const colorsData = {
+        'colors-1': ['#99C3CC', '#CC9999', '#CB99CC', '#A6CC99'],
+        'colors-2': ['#99C3CC', '#CC9999', '#CB99CC', '#A6CC99'],
+        'colors-3': ['#99C3CC', '#CC9999', '#CB99CC', '#A6CC99']
+    };
+
+    for (let key in colorsData) {
+        const colorContainer = document.getElementById(key);
+        if (colorContainer) {
+            colorsData[key].forEach(color => {
+                const colorSpan = document.createElement('span');
+                colorSpan.classList.add('color');
+                colorSpan.style.backgroundColor = color;
+                colorSpan.addEventListener('click', function () {
+                    document.querySelectorAll(`#${key} .color`).forEach(c => c.classList.remove('selected'));
+
+                    this.classList.add('selected');
+                });
+                colorContainer.appendChild(colorSpan);
+            });
+        }
+    }
 });
+
