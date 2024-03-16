@@ -30,3 +30,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+let originalTitles = [];
+
+function updateProductTitles() {
+    const productTitles = document.querySelectorAll('.product h2');
+
+    if (originalTitles.length === 0) {
+        productTitles.forEach((title) => {
+            originalTitles.push(title.innerHTML);
+        });
+    }
+
+    if (window.innerWidth <= 768) {
+
+        productTitles.forEach((title) => {
+            title.innerHTML = 'Organic Skinny High <br/> Waist Raw Hem Jeans';
+        });
+    } else {
+        productTitles.forEach((title, index) => {
+            title.innerHTML = originalTitles[index];
+        });
+    }
+}
+
+window.addEventListener('load', updateProductTitles);
+window.addEventListener('resize', updateProductTitles);
+
+
+

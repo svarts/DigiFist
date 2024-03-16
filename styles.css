@@ -150,7 +150,8 @@ h2 {
         display: none; 
     }
     .content .product {
-        width: 65%; 
+        width: 60%;
+        margin: 5px; 
     }
     .fa-chevron-right {
         display: none !important;
@@ -158,6 +159,10 @@ h2 {
     .product .price-color-wrapper {
         flex-direction: column;
         margin-left: 0;
+    }
+    .product h2 {
+        font-size: 13px;
+        line-height: 1.5;
     }
     .price-color-wrapper i {
         margin-right: 78%;
