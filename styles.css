@@ -176,5 +176,15 @@ h2 {
         display: none;
     }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+    .product-slider {
+        flex-direction: column;
+    }
+
+    .product {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+}
 
 
